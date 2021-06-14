@@ -1,0 +1,131 @@
+﻿@model BloodDonation.Models.Tbl_Savelife
+<link href="~/Content/css/signup.css" rel="stylesheet" />
+    <!--form start-->
+<div class="wls-contact">
+    <h1>Let's Get You Started Donate Blood and Become a Hero</h1>
+    @using (Html.BeginForm())
+    {
+        <div action="#" method="post">
+            <div class="agile-field-txt">
+                <label>
+                    Name
+                </label>
+                <div class="mr_agilemain">
+                    <div class="left-wth">
+                        @Html.EditorFor(model => model.First_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name" } })
+                        @*<input type="text" name="name" placeholder="First Name" required="">*@
+                        <label class="bot_w">
+                            First Name
+                        </label>
+                    </div>
+                    <div class="left-wth">
+                        @Html.EditorFor(model => model.Last_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name" } })
+                        @*<input type="text" name="name" placeholder="Last Name" required="">*@
+                        <label class="bot_w3">
+                            Last Name
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    Email :
+                </label>
+                @Html.EditorFor(model => model.Email_Id, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Email", @type = "Email"} })
+                @*<input type="email" name="email" placeholder="Email" required="" />*@
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    Mobile No:
+                </label>
+                @Html.EditorFor(model => model.Mobile_Number, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Number", @type = "Number", @maxlenght = "10" } })
+                @*<input type="text" name="name" placeholder="Number" required="" />*@
+            </div>
+            <div class="gender_w">
+                <div class="w_gender">
+                    <label>
+                        Age:
+                    </label>
+                    <div class="mr_agilemain">
+                        @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", @placeholder = "Age", @type = "number" } })
+                        @*<input type="number" id="Numseats" required="" min="6">*@
+                    </div>
+                </div>
+                <div class="w_gender">
+                    <label class="agile_rad">
+                        Gender:
+                    </label>
+                    <div class="mr_agilemain">
+                        <div class="left_w">
+
+                            <input type="radio" id="test1" value="Male" name="Gender" checked>
+                            <label for="test1">Male</label>
+                        </div>
+                        <div class="left_w">
+                            <input type="radio" id="test2" value="Female" name="Gender">
+                            <label for="test2">Female</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    Address
+                </label>
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Address" } })
+                @*<input type="text" name="name" placeholder="Address" required="" />*@
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    Landmark
+                </label>
+                @Html.EditorFor(model => model.Landmark, new { htmlAttributes = new { @class = "form-control", @placeholder = "LandMark", @type = "Text" } })
+                @*<input type="text" name="name" placeholder="Landmark" required="" />*@
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    Blood Type
+                </label>
+                @Html.DropDownListFor(x => x.Blood_Type, new List<SelectListItem>
+                {
+                new SelectListItem(){Text ="A+" , Value="A+"},
+                new SelectListItem(){Text ="A-" , Value="A-"},
+                new SelectListItem(){Text ="Ab+" , Value="Ab+"},
+                new SelectListItem(){Text ="Ab-" , Value="Ab-"},
+                new SelectListItem(){Text ="O+" , Value="O+"},
+                new SelectListItem(){Text ="O-" , Value="O-"},
+                new SelectListItem(){Text ="B+" , Value="B+"},
+                new SelectListItem(){Text ="B-" , Value="B-"},
+                },"Select Your Blood Group",new{ @class ="form-control"})
+                @*<select>
+                        <option value="0">A+</option>
+                        <option value="1">A-</option>
+                        <option value="2">Ab+</option>
+                        <option value="3">Ab-</option>
+                        <option value="4">O+</option>
+                        <option value="5">O-</option>
+                        <option value="6">B+</option>
+                        <option value="7">B-</option>
+                    </select>*@
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    Password
+                </label>
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Password", @type = "Password" } })
+                @*<input type="password" name="Pwd" placeholder="Password" required="" />*@
+            </div>
+            <div class="agile-field-txt">
+                <label>
+                    Confirm Password
+                </label>
+                @Html.EditorFor(model => model.Confirm_Password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Re-Enter Password", @type = "Password" } })
+                @*<input type="password" name="Pwd2" placeholder="Password" required="" />*@
+            </div>
+            <div class="wls-contact  wl-sub">
+                <input type="submit" value="Submit" />
+            </div>
+
+        </div>
+    }
+</div>

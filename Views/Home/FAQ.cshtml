@@ -1,0 +1,36 @@
+﻿<body>
+     <div class="header">
+        <h1>FAQ'S</h1>
+    </div>
+    <button class="collapsible">IS IT SAFE?(CAN I GET AIDS FROM DONATING?)</button>
+    <div class="content">
+        <p>IT IS IMPOSSIBLE TO GET AIDS OR OTHER INFECTIOUS DISEASES FROM DONATING BLOOD.A DISPOSABLE,STERILE NEEDLE IS USED FOR EVERY BLOOD DONATION AND THEN DISCARDED</p>
+    </div>
+    <button class="collapsible">WHAT CAN I EXPECT AFTER I DONATE?</button>
+    <div class="content">
+        <p>WE RECOMMEND YOU RELAX FOR A FEW MINUTES.ENJOY A LIGHT SNACK .EXPERICING LIGHTHEADNESS OR FATIGUE FOLLOWING DONATION IS RARE AND USUALLY FLEETING.</p>
+    </div>
+    <button class="collapsible">WHAT KINDS OF FOOD SHOULD I EAT ? WHAT ACTIVITIES DO I AVOID?</button>
+    <div class="content">
+        <p>AVOID HAZARDOUS ACTIVITY SUCH AS HEAVY LIFTING ON THE DAY OF DOANTION . DRINK EXTRA FLUIDS FOR THE FOLLOWING 48 HOURS.EAT WELL-BALANCED MEALS & IRON-RICH FOODS SUCH AS SPINACH,PEACH,DATES,RAISINS,NUTS AND JUICES</p>
+    </div>
+
+    <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+
+  });
+}
+    </script>
+</body>
+</html>
